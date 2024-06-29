@@ -75,16 +75,16 @@ const OrderItemCard = ({ order }: Props) => {
       <Separator />
     </CardHeader>
     <CardContent className="flex flex-col gap-6">
-      <div className="flex flex-col gap-2">
-        {order.cartItems.map((cartItem) => (
-          <span key={cartItem.id}>
-            <Badge variant="outline" className="mr-2">
-              {cartItem.quantity}
-            </Badge>
-            {cartItem.name}
-          </span>
-        ))}
-      </div>
+    <div className="flex flex-col gap-2">
+          {order.cartItems.map((cartItem) => (
+            <span>
+              <Badge variant="outline" className="mr-2">
+                {cartItem.quantity}
+              </Badge>
+              {cartItem.name}
+            </span>
+          ))}
+        </div>
       <div className="flex flex-col space-y-1.5">
         <Label htmlFor="status">ما هو حال هذا الطلب؟</Label>
         <Select
