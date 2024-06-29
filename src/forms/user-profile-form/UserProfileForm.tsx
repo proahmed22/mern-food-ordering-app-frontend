@@ -59,7 +59,8 @@ const UserProfileForm = ({
         <div>
           <h2 className="text-2xl font-bold">{title}</h2>
           <FormDescription>
-            View and change your profile information here
+          اعرض اوغير معلومات ملفك الشخصي هنا
+
           </FormDescription>
         </div>
         <FormField
@@ -67,7 +68,7 @@ const UserProfileForm = ({
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel>الايميل</FormLabel>
               <FormControl>
                 <Input {...field} disabled className="bg-white" />
               </FormControl>
@@ -80,7 +81,7 @@ const UserProfileForm = ({
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name</FormLabel>
+              <FormLabel>الاسم</FormLabel>
               <FormControl>
                 <Input {...field} className="bg-white" />
               </FormControl>
@@ -95,7 +96,7 @@ const UserProfileForm = ({
             name="addressLine1"
             render={({ field }) => (
               <FormItem className="flex-1">
-                <FormLabel>Address Line 1</FormLabel>
+                <FormLabel>العنوان الأول</FormLabel>
                 <FormControl>
                   <Input {...field} className="bg-white" />
                 </FormControl>
@@ -108,7 +109,7 @@ const UserProfileForm = ({
             name="city"
             render={({ field }) => (
               <FormItem className="flex-1">
-                <FormLabel>City</FormLabel>
+                <FormLabel>المدينه</FormLabel>
                 <FormControl>
                   <Input {...field} className="bg-white" />
                 </FormControl>
@@ -121,7 +122,7 @@ const UserProfileForm = ({
             name="country"
             render={({ field }) => (
               <FormItem className="flex-1">
-                <FormLabel>Country</FormLabel>
+                <FormLabel>الدوله</FormLabel>
                 <FormControl>
                   <Input {...field} className="bg-white" />
                 </FormControl>

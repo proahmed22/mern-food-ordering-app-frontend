@@ -169,7 +169,6 @@ export const useUpdateMyRestaurantOrder = () => {
 
     if (!response.ok) {
       throw new Error("Failed to update status");
-      console.log(response);
     }
 
     return response.json();

@@ -11,7 +11,7 @@ const MainNav = () => {
       {isAuthenticated ? (
         <>
           <Link to="/order-status" className="font-bold hover:text-orange-500">
-            Order Status
+            حالة الطلب
           </Link>
           <UsernameMenu />
         </>
@@ -21,7 +21,7 @@ const MainNav = () => {
           className="font-bold hover:text-orange-500 hover:bg-white"
           onClick={async () => await loginWithRedirect()}
         >
-          Log In
+        تسجيل الدخول
         </Button>
       )}
     </span>

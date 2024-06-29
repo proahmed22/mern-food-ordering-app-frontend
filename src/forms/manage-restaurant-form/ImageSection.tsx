@@ -17,11 +17,11 @@ const ImageSection = () => {
   return (
     <div className="space-y-2">
       <div>
-        <h2 className="text-2xl font-bold">Image</h2>
-        <FormDescription>
-          Add an image that will be displayed on your restaurant listing in the
-          search results. Adding a new image will overwrite the existing one.
-        </FormDescription>
+      <h2 className="text-2xl font-bold">الصورة</h2>
+<FormDescription>
+  أضف صورة سيتم عرضها في قائمة مطعمك في نتائج البحث. إضافة صورة جديدة ستقوم باستبدال الصورة الحالية.
+</FormDescription>
+
       </div>
 
       <div className="flex flex-col gap-8 md:w-[50%]">

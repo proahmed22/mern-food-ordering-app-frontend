@@ -47,63 +47,65 @@ const OrderItemCard = ({ order }: Props) => {
 
   return (
     <Card>
-      <CardHeader>
-        <CardTitle className="grid md:grid-cols-4 gap-4 justify-between mb-3">
-          <div>
-            Customer Name:
-            <span className="ml-2 font-normal">
-              {order.deliveryDetails.name}
-            </span>
-          </div>
-          <div>
-            Delivery address:
-            <span className="ml-2 font-normal">
-              {order.deliveryDetails.addressLine1}, {order.deliveryDetails.city}
-            </span>
-          </div>
-          <div>
-            Time:
-            <span className="ml-2 font-normal">{getTime()}</span>
-          </div>
-          <div>
-            Total Cost:
-            <span className="ml-2 font-normal">
-              £{(order.totalAmount / 100).toFixed(2)}
-            </span>
-          </div>
-        </CardTitle>
-        <Separator />
-      </CardHeader>
-      <CardContent className="flex flex-col gap-6">
-        <div className="flex flex-col gap-2">
-          {order.cartItems.map((cartItem) => (
-            <span>
-              <Badge variant="outline" className="mr-2">
-                {cartItem.quantity}
-              </Badge>
-              {cartItem.name}
-            </span>
-          ))}
+    <CardHeader>
+      <CardTitle className="grid md:grid-cols-4 gap-4 justify-between mb-3">
+        <div>
+          اسم العميل:
+          <span className="ml-2 font-normal">
+            {order.deliveryDetails.name}
+          </span>
         </div>
-        <div className="flex flex-col space-y-1.5">
-          <Label htmlFor="status">What is the status of this order?</Label>
-          <Select
-            value={status}
-            disabled={isLoading}
-            onValueChange={(value) => handleStatusChange(value as OrderStatus)}
-          >
-            <SelectTrigger id="status">
-              <SelectValue placeholder="Status" />
-            </SelectTrigger>
-            <SelectContent position="popper">
-              {ORDER_STATUS.map((status) => (
-                <SelectItem value={status.value}>{status.label}</SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+        <div>
+          عنوان التوصيل:
+          <span className="ml-2 font-normal">
+            {order.deliveryDetails.addressLine1}, {order.deliveryDetails.city}
+          </span>
         </div>
-      </CardContent>
-    </Card>
+        <div>
+          الوقت:
+          <span className="ml-2 font-normal">{getTime()}</span>
+        </div>
+        <div>
+          الكلفة الإجمالية:
+          <span className="ml-2 font-normal">
+            £{(order.totalAmount / 100).toFixed(2)}
+          </span>
+        </div>
+      </CardTitle>
+      <Separator />
+    </CardHeader>
+    <CardContent className="flex flex-col gap-6">
+      <div className="flex flex-col gap-2">
+        {order.cartItems.map((cartItem) => (
+          <span key={cartItem.id}>
+            <Badge variant="outline" className="mr-2">
+              {cartItem.quantity}
+            </Badge>
+            {cartItem.name}
+          </span>
+        ))}
+      </div>
+      <div className="flex flex-col space-y-1.5">
+        <Label htmlFor="status">ما هو حال هذا الطلب؟</Label>
+        <Select
+          value={status}
+          disabled={isLoading}
+          onValueChange={(value) => handleStatusChange(value as OrderStatus)}
+        >
+          <SelectTrigger id="status">
+            <SelectValue placeholder="الحالة" />
+          </SelectTrigger>
+          <SelectContent position="popper">
+            {ORDER_STATUS.map((status) => (
+              <SelectItem key={status.value} value={status.value}>{status.label}</SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      </div>
+    </CardContent>
+  </Card>
+  
+  
   );
 };
 
